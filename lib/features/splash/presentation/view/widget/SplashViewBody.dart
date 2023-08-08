@@ -1,9 +1,36 @@
 import 'package:bookapp_cleanarch/core/utils/assts.dart';
+import 'package:bookapp_cleanarch/features/splash/presentation/view/widget/SlididingText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation<Offset> slidingAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    slidingAnimation = Tween<Offset>(begin: Offset(0, 2), end: Offset.zero).animate(animationController);
+    animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +46,7 @@ class SplashViewBody extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        const Text(
-          "Read Free Books",
-          textAlign: TextAlign.center,
-        ),
+        AnimationText(slidingAnimation: slidingAnimation),
       ],
     );
   }
