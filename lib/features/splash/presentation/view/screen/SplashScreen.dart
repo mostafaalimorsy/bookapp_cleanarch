@@ -1,3 +1,4 @@
+import 'package:bookapp_cleanarch/core/style/color/colorManager.dart';
 import 'package:bookapp_cleanarch/features/splash/presentation/view/widget/SplashViewBody.dart';
 import 'package:flutter/material.dart';
 

@@ -1,7 +1,11 @@
+import 'package:bookapp_cleanarch/core/const/const.dart';
 import 'package:bookapp_cleanarch/core/utils/assts.dart';
+import 'package:bookapp_cleanarch/features/home/presentation/view/home.dart';
 import 'package:bookapp_cleanarch/features/splash/presentation/view/widget/SlididingText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -18,11 +22,22 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
   void initState() {
     super.initState();
 
+    initSlidingAnimation();
+    navigateToHome();
+  }
+
+  void navigateToHome() {
+    Future.delayed(KTranstationDuration, () {
+      Get.to(() => const Home(), transition: KTranstationAnimation);
+    });
+  }
+
+  void initSlidingAnimation() {
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
     );
-    slidingAnimation = Tween<Offset>(begin: Offset(0, 2), end: Offset.zero).animate(animationController);
+    slidingAnimation = Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero).animate(animationController);
     animationController.forward();
   }
 
