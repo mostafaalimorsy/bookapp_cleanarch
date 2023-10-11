@@ -6,9 +6,7 @@ class FeatureListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8,
-      ),
+      padding: const EdgeInsets.only(left: 22),
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height * .3,
         child: ListView.separated(
