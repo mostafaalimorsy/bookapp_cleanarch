@@ -1,3 +1,4 @@
+import 'package:bookapp_cleanarch/features/home/presentation/view/widget/bestSellerListView.dart';
 import 'package:bookapp_cleanarch/features/home/presentation/view/widget/customAppBar.dart';
 import 'package:bookapp_cleanarch/features/home/presentation/view/widget/featuerListView.dart';
 import 'package:bookapp_cleanarch/features/home/presentation/view/widget/homeTitle.dart';
@@ -14,6 +15,7 @@ class HomeViewBody extends StatelessWidget {
         CustomAppBar(),
         FeatureListView(),
         HomeTitle(),
+        BestSellerListView(),
       ],
     );
   }
