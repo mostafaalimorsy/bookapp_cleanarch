@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bookapp_cleanarch/core/const/const.dart';
 import 'package:bookapp_cleanarch/core/utils/assts.dart';
 import 'package:bookapp_cleanarch/features/home/presentation/view/screen/home.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class BestSellerListView extends StatelessWidget {
@@ -5,12 +7,12 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.sizeOf(context).height / 2.2,
+    return LimitedBox(
+      maxHeight: MediaQuery.sizeOf(context).height / 2.2,
       child: ListView.builder(
         shrinkWrap: true,
         itemCount: 10,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
           return bestSellerItem(context);
         },
@@ -21,7 +23,7 @@ class BestSellerListView extends StatelessWidget {
   Padding bestSellerItem(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: Container(
+      child: SizedBox(
         width: MediaQuery.sizeOf(context).width,
         child: Row(
           children: [
@@ -59,14 +61,14 @@ class BestSellerListView extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          Text(
+          const Text(
             "J.K Rowling",
             style: TextStyle(color: Colors.grey),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Row(
@@ -78,12 +80,12 @@ class BestSellerListView extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.sizeOf(context).width / 5,
               ),
-              Icon(
+              const Icon(
                 Icons.star_sharp,
                 color: Colors.amber,
               ),
-              Text("4.8 "),
-              Text("(1000)"),
+              const Text("4.8 "),
+              const Text("(1000)"),
             ],
           )
         ],

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class HomeTitle extends StatelessWidget {
@@ -6,7 +8,7 @@ class HomeTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 40, left: 23),
+      padding: const EdgeInsets.only(top: 40, left: 23),
       child: Text(
         "Best Seller",
         style: Theme.of(context).textTheme.titleMedium,

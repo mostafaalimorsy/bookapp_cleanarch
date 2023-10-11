@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bookapp_cleanarch/features/home/presentation/view/widget/bestSellerListView.dart';
 import 'package:bookapp_cleanarch/features/home/presentation/view/widget/customAppBar.dart';
 import 'package:bookapp_cleanarch/features/home/presentation/view/widget/featuerListView.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bookapp_cleanarch/core/utils/assts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

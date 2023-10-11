@@ -1,4 +1,5 @@
-import 'package:bookapp_cleanarch/core/style/color/colorManager.dart';
+// ignore_for_file: file_names
+
 import 'package:bookapp_cleanarch/features/splash/presentation/view/widget/SplashViewBody.dart';
 import 'package:flutter/material.dart';
 
