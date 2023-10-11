@@ -10,6 +10,7 @@ class BestSellerListView extends StatelessWidget {
     return LimitedBox(
       maxHeight: MediaQuery.sizeOf(context).height / 2.2,
       child: ListView.builder(
+        padding: EdgeInsets.zero,
         shrinkWrap: true,
         itemCount: 10,
         physics: const BouncingScrollPhysics(),
