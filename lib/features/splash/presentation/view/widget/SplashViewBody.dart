@@ -1,6 +1,6 @@
 import 'package:bookapp_cleanarch/core/const/const.dart';
 import 'package:bookapp_cleanarch/core/utils/assts.dart';
-import 'package:bookapp_cleanarch/features/home/presentation/view/home.dart';
+import 'package:bookapp_cleanarch/features/home/presentation/view/screen/home.dart';
 import 'package:bookapp_cleanarch/features/splash/presentation/view/widget/SlididingText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
