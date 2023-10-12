@@ -29,7 +29,7 @@ class Searchbody extends StatelessWidget {
             },
             icon: const Icon(Icons.arrow_back),
           ),
-          Container(
+          SizedBox(
             width: MediaQuery.sizeOf(context).width / 1.2,
             child: TextFormField(
               decoration: InputDecoration(
