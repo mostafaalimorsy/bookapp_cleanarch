@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:bookapp_cleanarch/features/home/presentation/view/screen/deatils.dart';
 import 'package:bookapp_cleanarch/features/home/presentation/view/screen/home.dart';
 import 'package:bookapp_cleanarch/features/home/presentation/view/screen/search.dart';

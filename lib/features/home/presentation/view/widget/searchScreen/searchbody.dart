@@ -11,7 +11,7 @@ class Searchbody extends StatelessWidget {
       child: Column(
         children: [
           searchAppBar(context),
-          BestSellerListView(
+          const BestSellerListView(
             isSearch: true,
           )
         ],
@@ -34,7 +34,7 @@ class Searchbody extends StatelessWidget {
             child: TextFormField(
               decoration: InputDecoration(
                   hintText: "Search",
-                  suffixIcon: Icon(FontAwesomeIcons.magnifyingGlass),
+                  suffixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
                   enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12))),
             ),
           ),

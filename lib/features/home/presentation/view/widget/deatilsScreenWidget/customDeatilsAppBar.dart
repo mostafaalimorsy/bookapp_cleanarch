@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class CustomDetailsAppBar extends StatelessWidget {
@@ -14,11 +16,11 @@ class CustomDetailsAppBar extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.close),
+            icon: const Icon(Icons.close),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
           ),
         ],
       ),

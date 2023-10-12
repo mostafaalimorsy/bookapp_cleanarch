@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:bookapp_cleanarch/core/utils/appRouter.dart';
-import 'package:bookapp_cleanarch/features/home/presentation/view/screen/deatils.dart';
 
 class BestSellerListView extends StatelessWidget {
   final bool isSearch;

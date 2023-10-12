@@ -1,6 +1,5 @@
 import 'package:bookapp_cleanarch/core/style/theme/theme.dart';
 import 'package:bookapp_cleanarch/core/utils/appRouter.dart';
-import 'package:bookapp_cleanarch/features/splash/presentation/view/screen/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
