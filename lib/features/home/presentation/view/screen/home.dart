@@ -1,4 +1,4 @@
-import 'package:bookapp_cleanarch/features/home/presentation/view/widget/homeViewBody.dart';
+import 'package:bookapp_cleanarch/features/home/presentation/view/widget/homeWidget/homeViewBody.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
