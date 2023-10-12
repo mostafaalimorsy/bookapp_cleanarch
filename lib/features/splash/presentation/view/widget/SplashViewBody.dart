@@ -1,13 +1,13 @@
 // ignore_for_file: file_names
 
 import 'package:bookapp_cleanarch/core/const/const.dart';
+import 'package:bookapp_cleanarch/core/utils/appRouter.dart';
 import 'package:bookapp_cleanarch/core/utils/assts.dart';
 import 'package:bookapp_cleanarch/features/home/presentation/view/screen/home.dart';
 import 'package:bookapp_cleanarch/features/splash/presentation/view/widget/SlididingText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -30,7 +30,8 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
 
   void navigateToHome() {
     Future.delayed(KTranstationDuration, () {
-      Get.to(() => const Home(), transition: KTranstationAnimation);
+      GoRouter.of(context).push(AppRouter.kHome);
+      // Get.to(() => const Home(), transition: KTranstationAnimation);
     });
   }
 
