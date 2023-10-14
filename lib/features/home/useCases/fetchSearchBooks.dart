@@ -2,14 +2,16 @@
 
 import 'package:bookapp_cleanarch/features/home/domin/entity/bookEntity.dart';
 import 'package:bookapp_cleanarch/features/home/repo/homeRepo.dart';
+import 'package:bookapp_cleanarch/features/home/useCases/use-case-generic/noParamaterUseCase.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchSearchBooks {
+class FetchSearchBooks extends UseCase<List<BookEntity>> {
   final HomeRepo homeRepo;
 
   FetchSearchBooks(this.homeRepo);
 
-  Future<Either<Fail, List<BookEntity>>> fetchSearchBooks() {
-    return homeRepo.fetchSearchBooks();
+  @override
+  Future<Either<Fail, List<BookEntity>>> execute() async {
+    return await homeRepo.fetchSearchBooks();
   }
 }
