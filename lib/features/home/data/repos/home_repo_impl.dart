@@ -6,6 +6,7 @@ import 'package:bookapp_cleanarch/features/home/data/dataSource/remote/remote.da
 import 'package:bookapp_cleanarch/features/home/domin/entity/bookEntity.dart';
 import 'package:bookapp_cleanarch/features/home/domin/repo/homeRepo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeReposImplement extends HomeRepo {
   final HomeRemoteDataSource homeRemoteDataSource;
@@ -28,7 +29,15 @@ class HomeReposImplement extends HomeRepo {
         return right(await homeRemoteDataSource.fetchFeaturedBooks());
       }
     } catch (e) {
-      return left(Failure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(
+          ServerFailure(
+            msg: e.toString(),
+          ),
+        );
+      }
     }
   }
 
@@ -42,7 +51,15 @@ class HomeReposImplement extends HomeRepo {
         return right(await homeRemoteDataSource.fetchNewBooks());
       }
     } catch (e) {
-      return left(Failure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(
+          ServerFailure(
+            msg: e.toString(),
+          ),
+        );
+      }
     }
   }
 
