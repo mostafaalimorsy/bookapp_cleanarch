@@ -1,50 +1,53 @@
 {
   "kind": "books#volume",
-  "id": "SQZtBAAAQBAJ",
-  "etag": "xNkTO62aYok",
-  "selfLink": "https://www.googleapis.com/books/v1/volumes/SQZtBAAAQBAJ",
+  "id": "u13hVoYVZa8C",
+  "etag": "ZsTeI4MjKi8",
+  "selfLink": "https://www.googleapis.com/books/v1/volumes/u13hVoYVZa8C",
   "volumeInfo": {
-      "title": "How to Find and Download Free eBooks Survival Guide",
+      "title": "Planning Extreme Programming",
       "authors": [
-          "Toly K"
+          "Kent Beck",
+          "Martin Fowler"
       ],
-      "publisher": "MobileReference",
-      "publishedDate": "2011",
-      "description": "This guide provides step-by-step instructions on how to find and download free eBooks online. You will also learn how to download eBooks using your eReader. Additionally, several quick start guides are included for the following eReaders and eReader applications: - Amazon Kindle - Amazon Kindle Reader for PC - Amazon Kindle Reader for Android - Barnes and Noble Nook - Barnes and Noble Nook Color - Kobo - Sony Reader Daily Edition - iBooks Application for Apple iPad and iPhone In this guide, you will also find a list of the 21 best websites for downloading free eBooks. Some of the websites include: - Project Gutenberg - Internet Text Archive - Google Books - Arthur's Classic Novels - MobileRead Uploads",
+      "publisher": "Addison-Wesley Professional",
+      "publishedDate": "2001",
+      "description": "Without careful ongoing planning, the software development process can fall apart. Extreme Programming (XP) is a new programming discipline, or methodology, that is geared toward the way that the vast majority of software development projects are handled -- in small teams. In this new book, noted software engineers Kent Beck and Martin Fowler show the reader how to properly plan a software development project with XP in mind. The authors lay out a proven strategy that forces the reader to plan as their software project unfolds, and therefore avoid many of the nasty problems that can potentially spring up along the way.",
       "industryIdentifiers": [
           {
-              "type": "ISBN_13",
-              "identifier": "9781611980813"
+              "type": "ISBN_10",
+              "identifier": "0201710919"
           },
           {
-              "type": "ISBN_10",
-              "identifier": "161198081X"
+              "type": "ISBN_13",
+              "identifier": "9780201710915"
           }
       ],
       "readingModes": {
-          "text": true,
+          "text": false,
           "image": true
       },
-      "pageCount": 169,
+      "pageCount": 162,
       "printType": "BOOK",
       "categories": [
-          "Reference"
+          "Computers"
       ],
+      "averageRating": 4,
+      "ratingsCount": 6,
       "maturityRating": "NOT_MATURE",
-      "allowAnonLogging": true,
-      "contentVersion": "1.1.2.0.preview.3",
+      "allowAnonLogging": false,
+      "contentVersion": "0.2.4.0.preview.1",
       "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
       },
       "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=SQZtBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=SQZtBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=u13hVoYVZa8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=u13hVoYVZa8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
       },
       "language": "en",
-      "previewLink": "http://books.google.com.eg/books?id=SQZtBAAAQBAJ&pg=PA116&dq=free-ebooks&hl=&cd=1&source=gbs_api",
-      "infoLink": "http://books.google.com.eg/books?id=SQZtBAAAQBAJ&dq=free-ebooks&hl=&source=gbs_api",
-      "canonicalVolumeLink": "https://books.google.com/books/about/How_to_Find_and_Download_Free_eBooks_Sur.html?hl=&id=SQZtBAAAQBAJ"
+      "previewLink": "http://books.google.com.eg/books?id=u13hVoYVZa8C&printsec=frontcover&dq=programming&hl=&cd=1&source=gbs_api",
+      "infoLink": "http://books.google.com.eg/books?id=u13hVoYVZa8C&dq=programming&hl=&source=gbs_api",
+      "canonicalVolumeLink": "https://books.google.com/books/about/Planning_Extreme_Programming.html?hl=&id=u13hVoYVZa8C"
   },
   "saleInfo": {
       "country": "EG",
@@ -56,20 +59,18 @@
       "viewability": "PARTIAL",
       "embeddable": true,
       "publicDomain": false,
-      "textToSpeechPermission": "ALLOWED",
+      "textToSpeechPermission": "ALLOWED_FOR_ACCESSIBILITY",
       "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.eg/books/download/How_to_Find_and_Download_Free_eBooks_Sur-sample-epub.acsm?id=SQZtBAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
       },
       "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.eg/books/download/How_to_Find_and_Download_Free_eBooks_Sur-sample-pdf.acsm?id=SQZtBAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
       },
-      "webReaderLink": "http://play.google.com/books/reader?id=SQZtBAAAQBAJ&hl=&source=gbs_api",
+      "webReaderLink": "http://play.google.com/books/reader?id=u13hVoYVZa8C&hl=&source=gbs_api",
       "accessViewStatus": "SAMPLE",
       "quoteSharingAllowed": false
   },
   "searchInfo": {
-      "textSnippet": "... <b>free ebooks</b> directly. Table of Contents 1. Amazon Kindle 2. Barnes andNoble Nook 3. Barnes andNoble NookColor 4. Sony Reader Daily Edition 5. Kobo 6. Apple iPad 7. Apple iPhone 8. Samsung Galaxy Tab Back to Table of Contents 1. Amazon&nbsp;..."
+      "textSnippet": "In this new book, noted software engineers Kent Beck and Martin Fowler show the reader how to properly plan a software development project with XP in mind."
   }
 }

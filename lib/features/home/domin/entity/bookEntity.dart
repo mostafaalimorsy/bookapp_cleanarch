@@ -5,8 +5,8 @@ class BookEntity {
   final String? img;
   final String title;
   final String? authorName;
-  final num? price;
-  final num rating;
+  final String? price;
+  final num? rating;
 
   BookEntity(
       {required this.bookId,
