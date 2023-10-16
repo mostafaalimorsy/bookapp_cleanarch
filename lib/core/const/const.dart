@@ -2,3 +2,4 @@
 
 const KTranstationDuration = Duration(seconds: 2);
 // const KTranstationAnimation = Transition.downToUp;
+const kFeatureBoc = 'featured_box';

@@ -1,6 +1,8 @@
+import 'package:bookapp_cleanarch/core/const/const.dart';
 import 'package:bookapp_cleanarch/core/style/theme/theme.dart';
 import 'package:bookapp_cleanarch/core/utils/appRouter.dart';
 import 'package:bookapp_cleanarch/core/utils/dioHelper.dart';
+import 'package:bookapp_cleanarch/features/home/domin/entity/bookEntity.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -8,6 +10,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DIoHelper.init();
   await Hive.initFlutter();
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox(kFeatureBoc);
 
   runApp(const MyApp());
 }
