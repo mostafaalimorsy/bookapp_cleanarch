@@ -1,11 +1,18 @@
 // ignore_for_file: file_names
 
 class BookEntity {
-  final String img;
+  final String bookId;
+  final String? img;
   final String title;
-  final String authName;
-  final num price;
+  final String? authorName;
+  final num? price;
   final num rating;
 
-  BookEntity(this.img, this.title, this.authName, this.price, this.rating);
+  BookEntity(
+      {required this.bookId,
+      required this.img,
+      required this.title,
+      required this.authorName,
+      required this.price,
+      required this.rating});
 }
