@@ -2,10 +2,13 @@ import 'package:bookapp_cleanarch/core/style/theme/theme.dart';
 import 'package:bookapp_cleanarch/core/utils/appRouter.dart';
 import 'package:bookapp_cleanarch/core/utils/dioHelper.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DIoHelper.init();
+  await Hive.initFlutter();
+
   runApp(const MyApp());
 }
 
