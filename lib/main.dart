@@ -1,8 +1,11 @@
 import 'package:bookapp_cleanarch/core/style/theme/theme.dart';
 import 'package:bookapp_cleanarch/core/utils/appRouter.dart';
+import 'package:bookapp_cleanarch/core/utils/dioHelper.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  DIoHelper.init();
   runApp(const MyApp());
 }
 
