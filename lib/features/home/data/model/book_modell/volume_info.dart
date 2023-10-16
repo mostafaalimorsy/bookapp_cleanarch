@@ -11,7 +11,7 @@ class VolumeInfo {
   String? description;
   List<IndustryIdentifier>? industryIdentifiers;
   ReadingModes? readingModes;
-  int? pageCount;
+  num? pageCount;
   String? printType;
   List<String>? categories;
   String? maturityRating;
@@ -55,11 +55,9 @@ class VolumeInfo {
         industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
             ?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
             .toList(),
-        readingModes: json['readingModes'] == null
-            ? null
-            : ReadingModes.fromJson(
-                json['readingModes'] as Map<String, dynamic>),
-        pageCount: json['pageCount'] as int?,
+        readingModes:
+            json['readingModes'] == null ? null : ReadingModes.fromJson(json['readingModes'] as Map<String, dynamic>),
+        pageCount: json['pageCount'] as num?,
         printType: json['printType'] as String?,
         categories: json['categories'] as List<String>?,
         maturityRating: json['maturityRating'] as String?,
@@ -67,11 +65,8 @@ class VolumeInfo {
         contentVersion: json['contentVersion'] as String?,
         panelizationSummary: json['panelizationSummary'] == null
             ? null
-            : PanelizationSummary.fromJson(
-                json['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks: json['imageLinks'] == null
-            ? null
-            : ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+            : PanelizationSummary.fromJson(json['panelizationSummary'] as Map<String, dynamic>),
+        imageLinks: json['imageLinks'] == null ? null : ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
         language: json['language'] as String?,
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,
@@ -84,8 +79,7 @@ class VolumeInfo {
         'publisher': publisher,
         'publishedDate': publishedDate,
         'description': description,
-        'industryIdentifiers':
-            industryIdentifiers?.map((e) => e.toJson()).toList(),
+        'industryIdentifiers': industryIdentifiers?.map((e) => e.toJson()).toList(),
         'readingModes': readingModes?.toJson(),
         'pageCount': pageCount,
         'printType': printType,
