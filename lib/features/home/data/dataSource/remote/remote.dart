@@ -24,6 +24,9 @@ class HomeRemoteDataSourceImplement extends HomeRemoteDataSource {
     return await getData.get(endPoint: "volumes?Fitering=free-ebooks&q=programming").then((value) {
       List<BookEntity> data = getBooksList(value);
       return data;
+    }).catchError((e) {
+      print("$fetchFeaturedBooks is $e");
+      return e;
     });
   }
 
@@ -36,9 +39,14 @@ class HomeRemoteDataSourceImplement extends HomeRemoteDataSource {
   }
 
   @override
-  Future<List<BookEntity>> fetchNewBooks() {
-    // TODO: implement fetchNewBooks
-    throw UnimplementedError();
+  Future<List<BookEntity>> fetchNewBooks() async {
+    return await getData.get(endPoint: "volumes?Fitering=free-ebooks&q=programming&Sorting=newwst").then((value) {
+      List<BookEntity> data = getBooksList(value);
+      return data;
+    }).catchError((e) {
+      print("$fetchNewBooks is $e");
+      return e;
+    });
   }
 
   @override
