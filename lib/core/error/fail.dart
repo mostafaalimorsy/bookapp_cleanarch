@@ -1,1 +1,1 @@
-class Fail {}
+class Failure {}
