@@ -1,3 +1,5 @@
+import 'package:bookapp_cleanarch/core/const/const.dart';
+import 'package:bookapp_cleanarch/core/utils/cacheHelper.dart';
 import 'package:bookapp_cleanarch/core/utils/dioHelper.dart';
 import 'package:bookapp_cleanarch/features/home/data/model/book_model/book_model.dart';
 import 'package:bookapp_cleanarch/features/home/domin/entity/bookEntity.dart';
@@ -23,6 +25,7 @@ class HomeRemoteDataSourceImplement extends HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks() async {
     return await getData.get(endPoint: "volumes?Fitering=free-ebooks&q=programming").then((value) {
       List<BookEntity> data = getBooksList(value);
+      CacheHelper.saveDataLocally(data, kFeatureBoc);
       return data;
     }).catchError((e) {
       print("$fetchFeaturedBooks is $e");
