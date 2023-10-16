@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(this.featuredBooks, this.newBooks) : super(HomeInitial());
+  HomeCubit({required this.featuredBooks, required this.newBooks}) : super(HomeInitial());
 
   final FetchFeaturedBooks featuredBooks;
   final FetchNewsBooks newBooks;
