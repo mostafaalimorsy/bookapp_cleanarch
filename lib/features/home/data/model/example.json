@@ -1,0 +1,75 @@
+{
+  "kind": "books#volume",
+  "id": "SQZtBAAAQBAJ",
+  "etag": "xNkTO62aYok",
+  "selfLink": "https://www.googleapis.com/books/v1/volumes/SQZtBAAAQBAJ",
+  "volumeInfo": {
+      "title": "How to Find and Download Free eBooks Survival Guide",
+      "authors": [
+          "Toly K"
+      ],
+      "publisher": "MobileReference",
+      "publishedDate": "2011",
+      "description": "This guide provides step-by-step instructions on how to find and download free eBooks online. You will also learn how to download eBooks using your eReader. Additionally, several quick start guides are included for the following eReaders and eReader applications: - Amazon Kindle - Amazon Kindle Reader for PC - Amazon Kindle Reader for Android - Barnes and Noble Nook - Barnes and Noble Nook Color - Kobo - Sony Reader Daily Edition - iBooks Application for Apple iPad and iPhone In this guide, you will also find a list of the 21 best websites for downloading free eBooks. Some of the websites include: - Project Gutenberg - Internet Text Archive - Google Books - Arthur's Classic Novels - MobileRead Uploads",
+      "industryIdentifiers": [
+          {
+              "type": "ISBN_13",
+              "identifier": "9781611980813"
+          },
+          {
+              "type": "ISBN_10",
+              "identifier": "161198081X"
+          }
+      ],
+      "readingModes": {
+          "text": true,
+          "image": true
+      },
+      "pageCount": 169,
+      "printType": "BOOK",
+      "categories": [
+          "Reference"
+      ],
+      "maturityRating": "NOT_MATURE",
+      "allowAnonLogging": true,
+      "contentVersion": "1.1.2.0.preview.3",
+      "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+      },
+      "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=SQZtBAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=SQZtBAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      "language": "en",
+      "previewLink": "http://books.google.com.eg/books?id=SQZtBAAAQBAJ&pg=PA116&dq=free-ebooks&hl=&cd=1&source=gbs_api",
+      "infoLink": "http://books.google.com.eg/books?id=SQZtBAAAQBAJ&dq=free-ebooks&hl=&source=gbs_api",
+      "canonicalVolumeLink": "https://books.google.com/books/about/How_to_Find_and_Download_Free_eBooks_Sur.html?hl=&id=SQZtBAAAQBAJ"
+  },
+  "saleInfo": {
+      "country": "EG",
+      "saleability": "NOT_FOR_SALE",
+      "isEbook": false
+  },
+  "accessInfo": {
+      "country": "EG",
+      "viewability": "PARTIAL",
+      "embeddable": true,
+      "publicDomain": false,
+      "textToSpeechPermission": "ALLOWED",
+      "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.eg/books/download/How_to_Find_and_Download_Free_eBooks_Sur-sample-epub.acsm?id=SQZtBAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+      },
+      "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.eg/books/download/How_to_Find_and_Download_Free_eBooks_Sur-sample-pdf.acsm?id=SQZtBAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+      },
+      "webReaderLink": "http://play.google.com/books/reader?id=SQZtBAAAQBAJ&hl=&source=gbs_api",
+      "accessViewStatus": "SAMPLE",
+      "quoteSharingAllowed": false
+  },
+  "searchInfo": {
+      "textSnippet": "... <b>free ebooks</b> directly. Table of Contents 1. Amazon Kindle 2. Barnes andNoble Nook 3. Barnes andNoble NookColor 4. Sony Reader Daily Edition 5. Kobo 6. Apple iPad 7. Apple iPhone 8. Samsung Galaxy Tab Back to Table of Contents 1. Amazon&nbsp;..."
+  }
+}

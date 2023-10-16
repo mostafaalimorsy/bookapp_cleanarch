@@ -29,7 +29,8 @@ class BookDetails extends StatelessWidget {
   Widget spesificText() {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-      child: Align(alignment: Alignment.centerLeft, child: Text("You can also like")),
+      child: Align(
+          alignment: Alignment.centerLeft, child: Text("You can also like")),
     );
   }
 }

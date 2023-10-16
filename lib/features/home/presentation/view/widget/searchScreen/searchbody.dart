@@ -35,7 +35,8 @@ class Searchbody extends StatelessWidget {
               decoration: InputDecoration(
                   hintText: "Search",
                   suffixIcon: const Icon(FontAwesomeIcons.magnifyingGlass),
-                  enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12))),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12))),
             ),
           ),
         ],

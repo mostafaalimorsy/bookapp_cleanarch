@@ -16,12 +16,16 @@ class BestSellerListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LimitedBox(
-      maxHeight: isSearch ? MediaQuery.sizeOf(context).height / 1.2 : MediaQuery.sizeOf(context).height / 2.2,
+      maxHeight: isSearch
+          ? MediaQuery.sizeOf(context).height / 1.2
+          : MediaQuery.sizeOf(context).height / 2.2,
       child: ListView.builder(
         padding: EdgeInsets.zero,
         shrinkWrap: true,
         itemCount: 10,
-        physics: isSearch ? const BouncingScrollPhysics() : const NeverScrollableScrollPhysics(),
+        physics: isSearch
+            ? const BouncingScrollPhysics()
+            : const NeverScrollableScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
           return bestSellerItem(context);
         },
@@ -48,7 +52,9 @@ class BestSellerListView extends StatelessWidget {
                   child: Container(
                     height: 100,
                     width: 60,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.amber),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.amber),
                   ),
                 ),
               ),

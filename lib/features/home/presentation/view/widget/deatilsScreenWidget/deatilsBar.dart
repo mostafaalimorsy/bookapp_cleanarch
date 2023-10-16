@@ -17,11 +17,14 @@ class DeatilsBar extends StatelessWidget {
             height: 50,
             decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(25), bottomLeft: Radius.circular(25))),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25),
+                    bottomLeft: Radius.circular(25))),
             width: MediaQuery.sizeOf(context).width / 3,
             child: const Text(
               '19.9\$',
-              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             ),
           ),
           Container(
@@ -29,7 +32,9 @@ class DeatilsBar extends StatelessWidget {
             height: 50,
             decoration: const BoxDecoration(
                 color: Colors.redAccent,
-                borderRadius: BorderRadius.only(topRight: Radius.circular(25), bottomRight: Radius.circular(25))),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(25),
+                    bottomRight: Radius.circular(25))),
             width: MediaQuery.sizeOf(context).width / 3,
             child: const Text(
               'Free preview',
