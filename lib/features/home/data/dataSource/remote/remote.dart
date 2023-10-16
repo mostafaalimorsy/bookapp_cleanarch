@@ -25,7 +25,7 @@ class HomeRemoteDataSourceImplement extends HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks() async {
     return await getData.get(endPoint: "volumes?Fitering=free-ebooks&q=programming").then((value) {
       List<BookEntity> data = getBooksList(value);
-      CacheHelper.saveDataLocally(data, kFeatureBoc);
+      CacheHelper.saveDataLocally(data, kFeatureBox);
       return data;
     }).catchError((e) {
       print("$fetchFeaturedBooks is $e");
@@ -45,6 +45,8 @@ class HomeRemoteDataSourceImplement extends HomeRemoteDataSource {
   Future<List<BookEntity>> fetchNewBooks() async {
     return await getData.get(endPoint: "volumes?Fitering=free-ebooks&q=programming&Sorting=newwst").then((value) {
       List<BookEntity> data = getBooksList(value);
+      CacheHelper.saveDataLocally(data, kNewsBox);
+
       return data;
     }).catchError((e) {
       print("$fetchNewBooks is $e");

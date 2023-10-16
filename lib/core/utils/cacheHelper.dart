@@ -7,11 +7,19 @@ class CacheHelper {
   static init() async {
     await Hive.initFlutter();
     Hive.registerAdapter(BookEntityAdapter());
-    await Hive.openBox(kFeatureBoc);
+    await Hive.openBox<BookEntity>(kFeatureBox);
+    await Hive.openBox<BookEntity>(kNewsBox);
   }
 
   static void saveDataLocally(List<BookEntity> data, boxName) {
     var box = Hive.box(boxName);
     box.addAll(data);
+  }
+
+  static List<BookEntity> getDataLocally(boxName) {
+    List<BookEntity> data = [];
+    var box = Hive.box<BookEntity>(boxName);
+    data = box.values.toList();
+    return data;
   }
 }

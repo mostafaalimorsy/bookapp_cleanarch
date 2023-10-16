@@ -1,20 +1,22 @@
+import 'package:bookapp_cleanarch/core/const/const.dart';
+import 'package:bookapp_cleanarch/core/utils/cacheHelper.dart';
 import 'package:bookapp_cleanarch/features/home/domin/entity/bookEntity.dart';
 
 abstract class HomeLocalDataSource {
-  Future<List<BookEntity>> fetchFeaturedBooks();
-  Future<List<BookEntity>> fetchNewBooks();
+  List<BookEntity> fetchFeaturedBooks();
+  List<BookEntity> fetchNewBooks();
 }
 
 class HomeLocalDataSourceImplement extends HomeLocalDataSource {
   @override
-  Future<List<BookEntity>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
-    throw UnimplementedError();
+  List<BookEntity> fetchFeaturedBooks() {
+    List<BookEntity> data = CacheHelper.getDataLocally(kFeatureBox);
+    return data;
   }
 
   @override
-  Future<List<BookEntity>> fetchNewBooks() {
-    // TODO: implement fetchNewBooks
-    throw UnimplementedError();
+  List<BookEntity> fetchNewBooks() {
+    List<BookEntity> data = CacheHelper.getDataLocally(kNewsBox);
+    return data;
   }
 }
