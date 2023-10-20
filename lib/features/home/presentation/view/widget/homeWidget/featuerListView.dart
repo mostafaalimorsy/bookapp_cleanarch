@@ -22,6 +22,7 @@ class FeatureListView extends StatelessWidget {
       },
       builder: (context, state) {
         HomeCubit getData = HomeCubit.get(context);
+        getData.isNewsPage = false;
         return Padding(
           padding: const EdgeInsets.only(left: 22),
           child: SizedBox(
@@ -31,7 +32,7 @@ class FeatureListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               shrinkWrap: false,
               itemBuilder: (BuildContext context, int index) {
-                return itemForBuild(context, getData.featuredBooksData[index].img);
+                return itemForBuild(context, getData.featuredBooksData[index].img, index);
               },
               itemCount: 10,
               separatorBuilder: (BuildContext context, int index) {
@@ -46,9 +47,12 @@ class FeatureListView extends StatelessWidget {
     );
   }
 
-  Widget itemForBuild(context, data) {
+  Widget itemForBuild(context, data, index) {
     return InkWell(
       onTap: () {
+        HomeCubit.get(context).selectedFeatureBooksData = 0;
+        HomeCubit.get(context).selectedFeatureBooksData = index;
+
         GoRouter.of(context).push(AppRouter.kHomeDealtils);
       },
       child: CachedNetworkImage(

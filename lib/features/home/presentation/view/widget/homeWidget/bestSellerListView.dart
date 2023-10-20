@@ -33,7 +33,15 @@ class BestSellerListView extends StatelessWidget {
             itemCount: getData.newsData.length,
             physics: isSearch ? const BouncingScrollPhysics() : const NeverScrollableScrollPhysics(),
             itemBuilder: (BuildContext context, int index) {
-              return bestSellerItem(context, getData.newsData[index]);
+              return InkWell(
+                  onTap: () {
+                    getData.isNewsPage = true;
+
+                    getData.selectedNewsBooksData = 0;
+                    getData.selectedNewsBooksData = index;
+                    GoRouter.of(context).push(AppRouter.kHomeDealtils);
+                  },
+                  child: bestSellerItem(context, getData.newsData[index]));
             },
           ),
         );
@@ -42,43 +50,38 @@ class BestSellerListView extends StatelessWidget {
   }
 
   Widget bestSellerItem(BuildContext context, data) {
-    return InkWell(
-      onTap: () {
-        GoRouter.of(context).push(AppRouter.kHomeDealtils);
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: SizedBox(
-          width: MediaQuery.sizeOf(context).width,
-          child: Row(
-            children: [
-              //image
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: SizedBox(
+        width: MediaQuery.sizeOf(context).width,
+        child: Row(
+          children: [
+            //image
 
-              CachedNetworkImage(
-                imageUrl: data.img,
-                imageBuilder: (context, imageProvider) => SizedBox(
-                  height: 100,
-                  child: AspectRatio(
-                    aspectRatio: 3 / 4,
-                    child: Container(
-                      height: 100,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(image: NetworkImage(data.img), fit: BoxFit.fill),
-                        borderRadius: BorderRadius.circular(10),
-                        // color: Colors.amber,
-                      ),
+            CachedNetworkImage(
+              imageUrl: data.img,
+              imageBuilder: (context, imageProvider) => SizedBox(
+                height: 100,
+                child: AspectRatio(
+                  aspectRatio: 3 / 4,
+                  child: Container(
+                    height: 100,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(image: NetworkImage(data.img), fit: BoxFit.fill),
+                      borderRadius: BorderRadius.circular(10),
+                      // color: Colors.amber,
                     ),
                   ),
                 ),
-                placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
+              placeholder: (context, url) => CircularProgressIndicator(),
+              errorWidget: (context, url, error) => Icon(Icons.error),
+            ),
 
-              //title
-              itemTitle(context, data)
-            ],
-          ),
+            //title
+            itemTitle(context, data)
+          ],
         ),
       ),
     );

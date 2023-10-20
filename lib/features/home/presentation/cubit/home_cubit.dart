@@ -14,7 +14,10 @@ class HomeCubit extends Cubit<HomeState> {
   final FetchFeaturedBooks featuredBooks;
   final FetchNewsBooks newBooks;
   List<BookEntity> featuredBooksData = [];
+  int? selectedFeatureBooksData;
   List<BookEntity> newsData = [];
+  int selectedNewsBooksData = 0;
+  bool isNewsPage = false;
   Future<void> fetchFeatueBooks() async {
     emit(HomeFeaturedBooksLoading());
     var result = await featuredBooks.execute();
