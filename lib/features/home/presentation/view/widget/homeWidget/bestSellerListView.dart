@@ -1,7 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: file_names
 
+import 'package:bookapp_cleanarch/features/home/presentation/cubit/home_cubit.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:bookapp_cleanarch/core/utils/appRouter.dart';
@@ -15,25 +18,30 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LimitedBox(
-      maxHeight: isSearch
-          ? MediaQuery.sizeOf(context).height / 1.2
-          : MediaQuery.sizeOf(context).height / 2.2,
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        shrinkWrap: true,
-        itemCount: 10,
-        physics: isSearch
-            ? const BouncingScrollPhysics()
-            : const NeverScrollableScrollPhysics(),
-        itemBuilder: (BuildContext context, int index) {
-          return bestSellerItem(context);
-        },
-      ),
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (context, state) {
+        // TODO: implement listener
+      },
+      builder: (context, state) {
+        HomeCubit getData = HomeCubit.get(context);
+
+        return LimitedBox(
+          maxHeight: isSearch ? MediaQuery.sizeOf(context).height / 1.2 : MediaQuery.sizeOf(context).height / 2.2,
+          child: ListView.builder(
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            itemCount: getData.newsData.length,
+            physics: isSearch ? const BouncingScrollPhysics() : const NeverScrollableScrollPhysics(),
+            itemBuilder: (BuildContext context, int index) {
+              return bestSellerItem(context, getData.newsData[index]);
+            },
+          ),
+        );
+      },
     );
   }
 
-  Widget bestSellerItem(BuildContext context) {
+  Widget bestSellerItem(BuildContext context, data) {
     return InkWell(
       onTap: () {
         GoRouter.of(context).push(AppRouter.kHomeDealtils);
@@ -45,21 +53,30 @@ class BestSellerListView extends StatelessWidget {
           child: Row(
             children: [
               //image
-              SizedBox(
-                height: 100,
-                child: AspectRatio(
-                  aspectRatio: 3 / 4,
-                  child: Container(
-                    height: 100,
-                    width: 60,
-                    decoration: BoxDecoration(
+
+              CachedNetworkImage(
+                imageUrl: data.img,
+                imageBuilder: (context, imageProvider) => SizedBox(
+                  height: 100,
+                  child: AspectRatio(
+                    aspectRatio: 3 / 4,
+                    child: Container(
+                      height: 100,
+                      width: 60,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(image: NetworkImage(data.img), fit: BoxFit.fill),
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.amber),
+                        // color: Colors.amber,
+                      ),
+                    ),
                   ),
                 ),
+                placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
+
               //title
-              itemTitle(context)
+              itemTitle(context, data)
             ],
           ),
         ),
@@ -67,7 +84,7 @@ class BestSellerListView extends StatelessWidget {
     );
   }
 
-  Padding itemTitle(BuildContext context) {
+  Widget itemTitle(BuildContext context, data) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -76,7 +93,7 @@ class BestSellerListView extends StatelessWidget {
           SizedBox(
             width: MediaQuery.sizeOf(context).width / 2,
             child: Text(
-              "Harry Potter and the Globlet of fire",
+              data.title,
               maxLines: 2,
               style: Theme.of(context).textTheme.titleMedium,
             ),
@@ -84,8 +101,8 @@ class BestSellerListView extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          const Text(
-            "J.K Rowling",
+          Text(
+            data.authorName,
             style: TextStyle(color: Colors.grey),
           ),
           const SizedBox(
@@ -94,7 +111,7 @@ class BestSellerListView extends StatelessWidget {
           Row(
             children: [
               Text(
-                "19.9 \$",
+                "${data.price} \$",
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               SizedBox(
@@ -104,7 +121,7 @@ class BestSellerListView extends StatelessWidget {
                 Icons.star_sharp,
                 color: Colors.amber,
               ),
-              const Text("4.8 "),
+              Text("${data.rating} "),
               const Text("(1000)"),
             ],
           )

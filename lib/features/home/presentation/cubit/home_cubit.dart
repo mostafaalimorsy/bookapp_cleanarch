@@ -3,14 +3,18 @@ import 'package:bookapp_cleanarch/features/home/domin/entity/bookEntity.dart';
 import 'package:bookapp_cleanarch/features/home/domin/useCases/featchFeatueredBooksUseCase.dart';
 import 'package:bookapp_cleanarch/features/home/domin/useCases/featchNewsBooksUseCase.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit({required this.featuredBooks, required this.newBooks}) : super(HomeInitial());
 
+  static HomeCubit get(context) => BlocProvider.of(context);
   final FetchFeaturedBooks featuredBooks;
   final FetchNewsBooks newBooks;
+  List<BookEntity> featuredBooksData = [];
+  List<BookEntity> newsData = [];
   Future<void> fetchFeatueBooks() async {
     emit(HomeFeaturedBooksLoading());
     var result = await featuredBooks.execute();
@@ -21,6 +25,7 @@ class HomeCubit extends Cubit<HomeState> {
         );
       },
       (books) {
+        featuredBooksData = books;
         emit(
           HomeFeaturedBooksSuccess(books: books),
         );
@@ -38,6 +43,7 @@ class HomeCubit extends Cubit<HomeState> {
         );
       },
       (books) {
+        newsData = books;
         emit(
           HomeNewsBooksSuccess(books: books),
         );
