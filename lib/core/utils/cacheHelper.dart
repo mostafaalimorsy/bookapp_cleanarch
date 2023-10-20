@@ -12,7 +12,7 @@ class CacheHelper {
   }
 
   static void saveDataLocally(List<BookEntity> data, boxName) {
-    var box = Hive.box(boxName);
+    var box = Hive.box<BookEntity>(boxName);
     box.addAll(data);
   }
 

@@ -17,7 +17,7 @@ import 'package:get_it/get_it.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DIoHelper.init();
-  CacheHelper.init();
+  await CacheHelper.init();
   DIjection.setupServiceLocator(getIt);
   Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
@@ -35,9 +35,8 @@ class MyApp extends StatelessWidget {
       create: (context) => HomeCubit(
         featuredBooks: FetchFeaturedBooks(getIt.get<HomeReposImplement>()),
         newBooks: FetchNewsBooks(getIt.get<HomeReposImplement>()),
-      )
-        ..fetchFeatueBooks()
-        ..fetchNewBooks(),
+      )..fetchFeatueBooks(),
+      // ..fetchNewBooks(),
       child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {
           // TODO: implement listener
