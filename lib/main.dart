@@ -4,8 +4,6 @@ import 'package:bookapp_cleanarch/core/utils/bloc_observel.dart';
 import 'package:bookapp_cleanarch/core/utils/cacheHelper.dart';
 import 'package:bookapp_cleanarch/core/utils/dioHelper.dart';
 import 'package:bookapp_cleanarch/core/utils/setupServiceLocator.dart';
-import 'package:bookapp_cleanarch/features/home/data/dataSource/local/local.dart';
-import 'package:bookapp_cleanarch/features/home/data/dataSource/remote/remote.dart';
 import 'package:bookapp_cleanarch/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookapp_cleanarch/features/home/domin/useCases/featchFeatueredBooksUseCase.dart';
 import 'package:bookapp_cleanarch/features/home/domin/useCases/featchNewsBooksUseCase.dart';
@@ -35,8 +33,9 @@ class MyApp extends StatelessWidget {
       create: (context) => HomeCubit(
         featuredBooks: FetchFeaturedBooks(getIt.get<HomeReposImplement>()),
         newBooks: FetchNewsBooks(getIt.get<HomeReposImplement>()),
-      )..fetchFeatueBooks(),
-      // ..fetchNewBooks(),
+      )
+        ..fetchFeatueBooks()
+        ..fetchNewBooks(),
       child: BlocConsumer<HomeCubit, HomeState>(
         listener: (context, state) {
           // TODO: implement listener
